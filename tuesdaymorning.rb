@@ -19,15 +19,14 @@ get '/tuesday/' do
     puts "#{request.body}"
     response = http.request(request)
 
-puts "#{response}"
-
     @load_opps_response = JSON.parse(response.body)
-    puts "#{@load_opps_response}"
 @jobs = []
+puts "array init"
 @load_opps_response["opportunities"].each do |opp|
-
+puts "each init"
   job = "https://recruiting2.ultipro.com/TUE1000/JobBoard/1b3c4479-ea4e-4427-acbe-af4e8cad5cc8/OpportunityDetail?opportunityId=#{opp["Id"]}"
   @jobs << "#{job}"
+  puts "url loaded"
 end
 
   erb :index
