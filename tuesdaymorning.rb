@@ -1,9 +1,7 @@
 require 'sinatra'
-require 'rubygems'
 require 'open-uri'
 require 'uri'
-require 'rails'
-require 'similar_text'
+require 'json'
 
 
 get '/tuesday/' do
