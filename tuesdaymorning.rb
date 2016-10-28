@@ -22,6 +22,7 @@ get '/tuesday/' do
 puts "#{response}"
 
     @load_opps_response = JSON.parse(response.body)
+    puts "#{@load_opps_response}"
 @jobs = []
 @load_opps_response["opportunities"].each do |opp|
 
