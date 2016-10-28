@@ -2,6 +2,7 @@ require 'sinatra'
 require 'open-uri'
 require 'uri'
 require 'json'
+require 'erb'
 
 
 get '/tuesday/' do
@@ -29,6 +30,7 @@ job = "https://recruiting2.ultipro.com/TUE1000/JobBoard/1b3c4479-ea4e-4427-acbe-
 
 end
 puts "~~~~~~~~~~~~~made it out alive~~~~~~~~~~~~~~~~"
+
   erb :index
 
 end
