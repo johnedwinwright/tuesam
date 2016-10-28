@@ -21,14 +21,14 @@ get '/tuesday/' do
 
     @load_opps_response = JSON.parse(response.body)
 @jobs = []
-puts "array init"
-@load_opps_response["opportunities"].each do |opp|
-puts "each init"
-  job = "https://recruiting2.ultipro.com/TUE1000/JobBoard/1b3c4479-ea4e-4427-acbe-af4e8cad5cc8/OpportunityDetail?opportunityId=#{opp["Id"]}"
-  @jobs << "#{job}"
-  puts "url loaded"
-end
 
+@load_opps_response["opportunities"].each do |opp|
+
+job = "https://recruiting2.ultipro.com/TUE1000/JobBoard/1b3c4479-ea4e-4427-acbe-af4e8cad5cc8/OpportunityDetail?opportunityId=#{opp["Id"]}"
+  @jobs << "#{job}"
+
+end
+puts "~~~~~~~~~~~~~made it out alive~~~~~~~~~~~~~~~~"
   erb :index
 
 end
