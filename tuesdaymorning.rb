@@ -21,7 +21,10 @@ get '/tuesday/' do
     response = http.request(request)
 
     @load_opps_response = JSON.parse(response.body)
+
     @jobs = []
+
+    @jobs << "derp"
 
     @load_opps_response["opportunities"].each do |opp|
 
@@ -29,7 +32,7 @@ get '/tuesday/' do
       @jobs << "#{job}"
 
     end
-    
+
     puts "~~~~~~~~~~~~~made it out alive~~~~~~~~~~~~~~~~"
     erb :index
 
